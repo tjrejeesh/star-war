@@ -1,0 +1,12 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: $gray1;
+  text-align: center;
+  height: 74px;
+  box-shadow: 3px -2px 8px -6px $black;
+  display: grid;
+  align-items: center;
+}
