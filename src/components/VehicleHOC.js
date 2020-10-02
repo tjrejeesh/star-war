@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 export default function VehicleHOC(props) {
     const [ vehicles, setVehicles ] = useState('');
-    const { destination1, destination2, destination3, destination4 } = useSelector((state) => state);
+    const { destination1, destination2, destination3, destination4 } = useSelector((state) => state) || {};
     const dispatch = useDispatch();
 
     const { position } = props;
@@ -59,7 +59,8 @@ export default function VehicleHOC(props) {
             {selectedDistance && vehicles && vehicles.map((vehicle, i) =>
                 (
                     (vehicle.max_distance >= selectedDistance) ?
-                        <div key={i}><input id={"vehicle"+i}
+                        <div key={i}><input className="vehicles"
+                                            id={"vehicle"+i}
                                             name={"Destination" + position}
                                             value={vehicle.name}
                                             onClick={(e) => selectedVehicle(e, vehicle.speed)}

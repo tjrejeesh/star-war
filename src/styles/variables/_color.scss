@@ -1,8 +1,16 @@
-$blue: blue;
+$blue: #2185d0;
 $pink: pink;
 $white: #ffffff;
 $gray1: #333333;
 $gray2: #cccccc;
 $black: #000000;
 $red: red;
+$green: green;
 
+@keyframes blinkingText{
+  0%{ color: $blue; }
+  49%{ color: $blue; }
+  60%{ color: transparent; }
+  99%{ color:transparent;  }
+  100%{ color: $blue; }
+}

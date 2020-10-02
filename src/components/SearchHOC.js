@@ -21,7 +21,7 @@ export default function SearchHOC(props) {
     }, [fetchPlanets]);
 
     const dispatch = useDispatch();
-    const { loading, results } = useSelector((state) => state);
+    const { loading, results } = useSelector((state) => state) || {};
     const { position } = props;
 
     const timeoutRef = useRef();
@@ -58,7 +58,6 @@ export default function SearchHOC(props) {
             <Grid.Column width={6}>
                 <Search
                     id={"search" + position}
-                    loading={loading}
                     placeholder={"Destination" + position}
                     onResultSelect={(e, data) =>
                         dispatch({ type: 'UPDATE_SELECTION_' + position,
@@ -72,7 +71,6 @@ export default function SearchHOC(props) {
                     onSearchChange={handleSearchChange}
                     resultRenderer={resultRenderer}
                     results={results}
-                    /*value={destination}*/
                 />
             </Grid.Column>
         </Grid>

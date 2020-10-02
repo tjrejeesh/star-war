@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 
 export default function Estimation() {
-    const { destination1, destination2, destination3, destination4, speed1, speed2, speed3, speed4 } = useSelector((state) => state);
+    const { destination1, destination2, destination3, destination4, speed1, speed2, speed3, speed4 } = useSelector((state) => state) || {};
     let totalVal = 0;
 
     let distance1, distance2, distance3, distance4 = null;
@@ -38,6 +38,6 @@ export default function Estimation() {
         setTotal(totalVal);
     });
     return(
-        <div className="timeTaken">Time Taken : {total}</div>
+        <div className="timeTaken">Time Taken : <span className="time">{total}</span></div>
     )
 }

@@ -27,14 +27,11 @@ function App() {
         <Router>
             <Header/>
             <Switch>
-                <Route exact path="/search">
+                <Route exact path="/">
                     <SearchContainer />
                 </Route>
                 <Route exact path="/result">
                     <Result />
-                </Route>
-                <Route exact path="/">
-                    <SearchContainer />
                 </Route>
             </Switch>
             <Footer/>

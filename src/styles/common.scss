@@ -12,6 +12,11 @@ body {
   width: 80%;
   margin: auto 10%;
   padding: 25px;
+  float: left;
+  margin-top: 74px;
+  .info{
+    margin: 5px 0px 10px 0px;
+  }
   .ui.label{
     width: 100%;
   }
@@ -20,5 +25,28 @@ body {
   }
   .timeTaken{
     margin-top: 6px;
+    color: $blue;
+    font-size: 16px;
+    .time{
+      color: $blue;
+      font-weight: bold;
+    }
   }
+  .planet{
+    width: 100%;
+    margin-top: 20px;
+    color: $blue;
+    font-size: 25px;
+    animation:blinkingText 1.3s infinite;
+    text-align: center;
+  }
+  .failure{
+    color: $red;
+  }
+  .ui.grid>[class*="three wide"].column{
+    width: 25% !important;
+  }
+}
+.missionLogo{
+  margin: 0 10%;
 }

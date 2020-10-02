@@ -2,10 +2,12 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {tokenAPI, findAPI} from "../API";
 import {useSelector} from "react-redux";
 import Estimation from "./Estimation";
+import missionImg from "../assets/images/mission-details.png";
+import {Image} from "semantic-ui-react";
 
-export default function Result() {
+export default function EstimationResult() {
     const [results, setResults] = useState([]);
-    const { destination1, destination2, destination3, destination4, vehicle_names } = useSelector((state) => state);
+    const { destination1, destination2, destination3, destination4, vehicle_names } = useSelector((state) => state) || {};
 
     let selectedDestination1, selectedDestination2, selectedDestination3, selectedDestination4 = null;
 
@@ -75,14 +77,16 @@ export default function Result() {
             <h1>Finding Falcone !</h1>
             {(results.status === "success") ?
                 <div>
-                    <div>Success! Congratulations on Finding Falcone. King Shan is mightly pleased</div>
+                    <h2 className="success">Success! Congratulations on Finding Falcone. King Shan is mightly pleased</h2>
                     <Estimation/>
-                    <div>Planet Found : {results.planet_name}</div>
+                    <div className="planet">Planet Found : {results.planet_name}</div>
                 </div> : ''
             }
-
+            <div className="failure">
             {(results.status === "false") ?
-                <div>Better Luck next time</div> : ''}
-            {results.error}
+                <h3>Better Luck next time</h3> : ''}
+                <h3>{results.error}</h3>
+            </div>
+            <Image src={missionImg} width="100%"/>
         </div>)
 }

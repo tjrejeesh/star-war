@@ -16,7 +16,7 @@ export default function Header() {
         <header>
             <div className="title">Star War</div>
             <div className="sub-title">
-                <div onClick={resetSearch}>Reset</div>
+                <div className="reset" onClick={resetSearch}>Reset</div>
             </div>
         </header>
     )
